@@ -94,6 +94,30 @@ int findFirstPosOfValue(int a[], int n, int x){
 	return pos;	
 }
 
+//Return the position theK of x in the array
+//Return -1 in case find not found
+int getPosTheK(int a[], int n, int x, int theK){
+	int pos=-1, count=0;
+	if (theK<=0 || theK > n) return pos;
+	for (int i=0; i<n; i++)
+		if (a[i]==x){
+			count++;
+			if (count==theK) {
+				pos=i; break;
+			}
+		}
+	return pos;
+}
+//Sort the array from the First Max to the second Min in ascending order
+//The out of range keep unchange.
+void sortAscInRage(int a[], int n, int pos1, int pos2){
+	for (int i=pos1; i<pos2; i++)
+		for (int j=pos2; j>i; j--)
+			if (a[j-1] > a[j]){
+				int temp=a[j]; a[j]=a[j-1]; a[j-1]=temp;
+			}
+}
+
 int main(){
 	int n;
 	cin>>n;
@@ -112,14 +136,24 @@ int main(){
 //	displayArr(a,n);
 //	sortDesc(a,n);
 //	displayArr(a,n);
-	mySort(a,n);
+//	mySort(a,n);
 	displayArr(a,n);
 	cout<<"Input searching number: ";
 	int x;
 	cin>>x;
-	if (findFirstPosOfValue(a,n,x)!=-1)
-		cout<<"The position first found "<<x<<": "<<findFirstPosOfValue(a,n,x)<<endl;
-	else
-		cout<<"Find not found "<<x<<" in the array."<<endl;	
+//	if (findFirstPosOfValue(a,n,x)!=-1)
+//		cout<<"The position first found "<<x<<": "<<findFirstPosOfValue(a,n,x)<<endl;
+//	else
+//		cout<<"Find not found "<<x<<" in the array."<<endl;	
+	int theK=2;	
+	cout<<"The position of "<<x<<" the-"<<theK
+		<<" is: "<<getPosTheK(a,n,x,theK)<<endl;
+	
+	cout<<"Sort in the range"<<endl;
+	int pos1, pos2;
+	pos1=getPosTheK(a,n,getMax(a,n),1);
+	pos2=getPosTheK(a,n,getMin(a,n),3);
+	sortAscInRage(a,n,pos1,pos2);
+	displayArr(a,n);	
 	return 0;
 }
