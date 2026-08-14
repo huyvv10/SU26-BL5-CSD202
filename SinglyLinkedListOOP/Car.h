@@ -9,9 +9,13 @@ class Car{
 		int color;
 		double price;
 		
+		Car();
 		Car(std::string id, std::string _name, int _color, double _price);
+		
 		virtual ~Car();
 		std::string display();
+		void display2();
+		
 };
 
 #endif

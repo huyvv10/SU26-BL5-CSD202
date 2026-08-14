@@ -3,16 +3,20 @@
 #include "Node.h"
 #include "Car.h"
 
-class SinglyLinkedList{
+class SinglyLinkedListOOP{
 	private:
 		Node *head, *tail;
 	public:
-		SinglyLinkedList();
-		~SinglyLinkedList();
+		SinglyLinkedListOOP();
+		~SinglyLinkedListOOP();
+		
 		bool isEmpty();		
 		void addFirst(Car x);
+		void addLast(Car x);
 		void displayList();
 		int countNodes();
+		void sortByPriceDesc();
+		
 };
 
 #endif
