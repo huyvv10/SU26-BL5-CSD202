@@ -34,33 +34,34 @@ class BSTree {
 		}
 
 		Node *insertNode(int x) {
-			Node *newNode = new Node(x);
 			if (isEmpty()) {
-				root=newNode;
+				root = new Node(x);
 				return root;
 			}
-			Node *cur=root;
-			while (cur!=nullptr) {
-				if (x==cur->data) {
-					cout<<x<<" already existing in the tree."<<endl;
-					break;
+
+			Node *cur = root;
+
+			while (cur != nullptr) {
+				if (x == cur->data) {
+					cout << x << " already existing in the tree." << endl;
+					return root;
 				}
-				if (x<cur->data) {
-					if (cur->left==nullptr) {
-						cur->left=newNode;
-						break;
-					} else {
-						cur=cur->left;
+
+				if (x < cur->data) {
+					if (cur->left == nullptr) {
+						cur->left = new Node(x);
+						return root;
 					}
+					cur = cur->left;
 				} else {
-					if (cur->right==nullptr) {
-						cur->right=newNode;
-						break;
-					} else {
-						cur=cur->right;
+					if (cur->right == nullptr) {
+						cur->right = new Node(x);
+						return root;
 					}
+					cur = cur->right;
 				}
 			}
+
 			return root;
 		}
 
@@ -219,60 +220,118 @@ class BSTree {
 			return count;
 		}
 
-//		Node *deleteByCopying(Node *xRoot) {
-//
-//			return nullptr;
-//		}
+		Node *findNode(Node *xRoot, int x) {
+			if (xRoot == nullptr) return nullptr;
+			if (xRoot->data == x) return xRoot;
+
+			if (x < xRoot->data)
+				return findNode(xRoot->left, x);
+			else
+				return findNode(xRoot->right, x);
+		}
+
 		void deleteByCopy(Node*& p) {
+			if (p == nullptr) return;
+
 			if (p->left == nullptr) {
 				Node* q = p;
 				p = p->right;
 				delete q;
 			} else {
-				//Find the maximum node in the left subtree (Predecessor)
+				// Find maximum in left subtree (predecessor)
 				Node* curr = p->left;
 				Node* parent = p;
+
 				while (curr->right != nullptr) {
 					parent = curr;
 					curr = curr->right;
 				}
-				p->data = curr->data; // Copy data
+
+				// Copy predecessor data into p
+				p->data = curr->data;
+
+				// Delete predecessor node
 				if (parent == p) parent->left = curr->left;
 				else parent->right = curr->left;
+
 				delete curr;
+			}
+		}
+		void deleteKeyByCopy(int x) {
+			Node* cur = root;
+			Node** link = &root;
+
+			while (cur != nullptr) {
+				if (x == cur->data) {
+					deleteByCopy(*link);
+					return;
+				}
+
+				if (x < cur->data) {
+					link = &(cur->left);
+					cur = cur->left;
+				} else {
+					link = &(cur->right);
+					cur = cur->right;
+				}
 			}
 		}
 
 		void deleteByMerging(Node*& q) {
 			if (q == nullptr) return;
-			Node* nodeToDelete = q;
-
+			Node* toDelete = q;
 			if (q->left == nullptr) {
 				q = q->right;
-			} else {
-				Node* p = q->left;
-				while (p->right != nullptr) {
-					p = p->right;
-				}
-				p->right = q->right;
-				q = q->left;
+				delete toDelete;
+				return;
 			}
-			delete nodeToDelete;
+			Node* leftSub = q->left;
+			Node* rightSub = q->right;
+
+			Node* p = leftSub;
+			while (p->right != nullptr) {
+				p = p->right;
+			}
+			p->right = rightSub;
+
+			q = leftSub;
+			delete toDelete;
+		}
+		
+		void deleteKeyByMerging(int x) {
+			Node* cur = root;
+			Node** link = &root;
+
+			while (cur != nullptr) {
+				if (x == cur->data) {
+					deleteByMerging(*link);
+					return;
+				}
+				if (x < cur->data) {
+					link = &(cur->left);
+					cur = cur->left;
+				} else {
+					link = &(cur->right);
+					cur = cur->right;
+				}
+			}
 		}
 
-//		Node *deleteByMerging(Node *xRoot) {
-//
-//			return nullptr;
-//		}
 };
 
 int main() {
 	BSTree myBST;
+	myBST.root=myBST.insertNode(20);
 	myBST.root=myBST.insertNode(10);
+	myBST.root=myBST.insertNode(30);
 	myBST.root=myBST.insertNode(7);
+	myBST.root=myBST.insertNode(15);
+	myBST.root=myBST.insertNode(25);
+	myBST.root=myBST.insertNode(35);
 	myBST.root=myBST.insertNode(3);
 	myBST.root=myBST.insertNode(8);
-	myBST.root=myBST.insertNode(15);
+	myBST.root=myBST.insertNode(7);
+	myBST.root=myBST.insertNode(9);
 	cout<<"Pre-Order\n";
 	myBST.pre_Order(myBST.root);
 	cout<<"\nInOrder\n";
@@ -286,5 +345,8 @@ int main() {
 	cout<<"\nNumber of internal nodes: "<<myBST.countInternalNodes(myBST.root)<<endl;
 	cout<<"Number of external nodes: "<<myBST.countExternalNodes(myBST.root)<<endl;
 	cout<<"Number of nodes have 2 children: "<<myBST.countNodesHaveTwoChildren(myBST.root)<<endl;
+//	myBST.deleteKeyByCopy(20);
+	myBST.deleteKeyByMerging(20);
+	myBST.beadthFirstTraversal(myBST.root);
 	return 0;
 }
