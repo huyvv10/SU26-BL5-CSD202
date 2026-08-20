@@ -53,7 +53,7 @@ class BSTree {
 						cur=cur->left;
 					}
 				} else {
-					if (cur->right==nullptr){
+					if (cur->right==nullptr) {
 						cur->right=newNode;
 						break;
 					} else {
@@ -63,13 +63,13 @@ class BSTree {
 			}
 			return root;
 		}
-		
-		void visit(Node *xRoot){
+
+		void visit(Node *xRoot) {
 			if (xRoot==nullptr) return;
 			cout<<xRoot->data<<" ";
 		}
-		
-		void pre_Order(Node *xRoot){
+
+		void pre_Order(Node *xRoot) {
 			if (xRoot==nullptr) return;
 			visit(xRoot);
 			if (xRoot->left!=nullptr)
@@ -77,7 +77,7 @@ class BSTree {
 			if (xRoot->right!=nullptr)
 				pre_Order(xRoot->right);
 		}
-		void in_Order(Node *xRoot){
+		void in_Order(Node *xRoot) {
 			if (xRoot==nullptr) return;
 			if (xRoot->left!=nullptr)
 				in_Order(xRoot->left);
@@ -85,7 +85,7 @@ class BSTree {
 			if (xRoot->right!=nullptr)
 				in_Order(xRoot->right);
 		}
-		void post_Order(Node *xRoot){
+		void post_Order(Node *xRoot) {
 			if (xRoot==nullptr) return;
 			if (xRoot->left!=nullptr)
 				post_Order(xRoot->left);
@@ -93,44 +93,44 @@ class BSTree {
 				post_Order(xRoot->right);
 			visit(xRoot);
 		}
-		
+
 		//Breadth First Traversal
-		void beadthFirstTraversal(Node *xRoot){
+		void beadthFirstTraversal(Node *xRoot) {
 			if (xRoot==nullptr) return;
 			queue<Node*> myQ;
 			myQ.push(xRoot);
-			while (!myQ.empty()){
+			while (!myQ.empty()) {
 				Node *cur = myQ.front();
 				visit(cur);
 				myQ.pop();
 				if (cur->left!=nullptr)
 					myQ.push(cur->left);
-				if (cur->right!=nullptr)	
+				if (cur->right!=nullptr)
 					myQ.push(cur->right);
 			}
-						
+
 		}
 		//Count using Breadth First Traversal
-		int countBFS(Node *xRoot){
+		int countBFS(Node *xRoot) {
 			int count=0;
 			if (xRoot==nullptr) return 0;
 			queue<Node*> myQ;
 			myQ.push(xRoot);
-			while (!myQ.empty()){
+			while (!myQ.empty()) {
 				Node *cur = myQ.front();
 				count++;
 				myQ.pop();
 				if (cur->left!=nullptr)
 					myQ.push(cur->left);
-				if (cur->right!=nullptr)	
+				if (cur->right!=nullptr)
 					myQ.push(cur->right);
 			}
 			return count;
 		}
-		
+
 		//Return number of nodes within the tree
-		int countNode(Node *xRoot){
-			int count=0, l=0, r=0;			
+		int countNode(Node *xRoot) {
+			int count=0, l=0, r=0;
 			if (xRoot!=nullptr) count++;
 			if (xRoot->left!=nullptr)
 				l=countNode(xRoot->left);
@@ -138,96 +138,132 @@ class BSTree {
 				r=countNode(xRoot->right);
 			return count+l+r;
 		}
-		
+
 		//Count Internal nodes
-		int countInternalNodes(Node *xRoot){
-			int count=0, l=0, r=0;			
-			if (xRoot!=nullptr) 
+		int countInternalNodes(Node *xRoot) {
+			int count=0, l=0, r=0;
+			if (xRoot!=nullptr)
 				if (xRoot->left!=nullptr ||xRoot->right!=nullptr)
 					count++;
 			if (xRoot->left!=nullptr)
 				l=countInternalNodes(xRoot->left);
 			if (xRoot->right!=nullptr)
 				r=countInternalNodes(xRoot->right);
-			return count+l+r;			
+			return count+l+r;
 		}
-		
+
 		//Count External/Leaf nodes
-		int countExternalNodes(Node *xRoot){
-			int count=0, l=0, r=0;			
-			if (xRoot!=nullptr) 
+		int countExternalNodes(Node *xRoot) {
+			int count=0, l=0, r=0;
+			if (xRoot!=nullptr)
 				if (xRoot->left==nullptr && xRoot->right==nullptr)
 					count++;
 			if (xRoot->left!=nullptr)
 				l=countExternalNodes(xRoot->left);
 			if (xRoot->right!=nullptr)
 				r=countExternalNodes(xRoot->right);
-			return count+l+r;			
+			return count+l+r;
 		}
 		//Count nodes which have two children
-		int countNodesHaveTwoChildren(Node *xRoot){
+		int countNodesHaveTwoChildren(Node *xRoot) {
 			int count=0;
 			if (xRoot==nullptr) return 0;
 			queue<Node*> myQ;
 			myQ.push(xRoot);
-			while (!myQ.empty()){
+			while (!myQ.empty()) {
 				Node *cur = myQ.front();
 				if (cur->left!=nullptr && cur->right!=nullptr)
 					count++;
 				myQ.pop();
 				if (cur->left!=nullptr)
 					myQ.push(cur->left);
-				if (cur->right!=nullptr)	
+				if (cur->right!=nullptr)
 					myQ.push(cur->right);
 			}
-			return count;			
+			return count;
 		}
 		//Count nodes which only have a left child
-		int countNodesHaveALeftChild(Node *xRoot){
+		int countNodesHaveALeftChild(Node *xRoot) {
 			int count=0;
 			if (xRoot==nullptr) return 0;
 			queue<Node*> myQ;
 			myQ.push(xRoot);
-			while (!myQ.empty()){
+			while (!myQ.empty()) {
 				Node *cur = myQ.front();
 				if (cur->left!=nullptr && cur->right==nullptr)
 					count++;
 				myQ.pop();
 				if (cur->left!=nullptr)
 					myQ.push(cur->left);
-				if (cur->right!=nullptr)	
+				if (cur->right!=nullptr)
 					myQ.push(cur->right);
 			}
-			return count;			
+			return count;
 		}
 		//Count nodes which only have a right child
-		int countNodesHaveARightChild(Node *xRoot){
+		int countNodesHaveARightChild(Node *xRoot) {
 			int count=0;
 			if (xRoot==nullptr) return 0;
 			queue<Node*> myQ;
 			myQ.push(xRoot);
-			while (!myQ.empty()){
+			while (!myQ.empty()) {
 				Node *cur = myQ.front();
 				if (cur->left==nullptr && cur->right!=nullptr)
 					count++;
 				myQ.pop();
 				if (cur->left!=nullptr)
 					myQ.push(cur->left);
-				if (cur->right!=nullptr)	
+				if (cur->right!=nullptr)
 					myQ.push(cur->right);
 			}
 			return count;
 		}
-		
-		Node *deleteByCopying(Node *xRoot){
-			
-			return nullptr;
+
+//		Node *deleteByCopying(Node *xRoot) {
+//
+//			return nullptr;
+//		}
+		void deleteByCopy(Node*& p) {
+			if (p->left == nullptr) {
+				Node* q = p;
+				p = p->right;
+				delete q;
+			} else {
+				//Find the maximum node in the left subtree (Predecessor)
+				Node* curr = p->left;
+				Node* parent = p;
+				while (curr->right != nullptr) {
+					parent = curr;
+					curr = curr->right;
+				}
+				p->data = curr->data; // Copy data
+				if (parent == p) parent->left = curr->left;
+				else parent->right = curr->left;
+				delete curr;
+			}
 		}
-		
-		Node *deleteByMerging(Node *xRoot){
-			
-			return nullptr;
+
+		void deleteByMerging(Node*& q) {
+			if (q == nullptr) return;
+			Node* nodeToDelete = q;
+
+			if (q->left == nullptr) {
+				q = q->right;
+			} else {
+				Node* p = q->left;
+				while (p->right != nullptr) {
+					p = p->right;
+				}
+				p->right = q->right;
+				q = q->left;
+			}
+			delete nodeToDelete;
 		}
+
+//		Node *deleteByMerging(Node *xRoot) {
+//
+//			return nullptr;
+//		}
 };
 
 int main() {
