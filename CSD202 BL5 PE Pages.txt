@@ -1,0 +1,15 @@
+1A first Prime Odd
+1B first even last Prime
+
+2A addLast
+2B addFirst
+
+3A f1 inOrder [1.0, 5.0]
+3B f1 postOrder [1.9 3.9]
+
+Page 2
+1B 2B 3A
+
+
+Page 8
+1B 2A 3B

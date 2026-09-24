@@ -1,0 +1,17 @@
+Line 0
+Hung  Nhung  Kiet  Linh  Huong  Long  Minh  Ha  Khoa  Bao  Nhat  Son  Phuc  Vy  Lan  Trang
+3.5   2.9    3.8   3.2   0.0    4.2   3.7   0.0 2.5   3.4  3.6   2.8  -0.5  3.9 3.0  3.6
+60    40     55    70    35     50    85    45  20    90   75    32   60    50  80   35
+Line 4
+Hung  Nhung  Kiet  Linh  Huong  Long  Minh  Ha  Khoa  Bao  Nhat  Son  Phuc  Vy  Lan  Trang
+3.5   2.9    3.8   3.2   0.0    4.2   3.7   0.0 2.5   3.4  3.6   2.8  -0.5  3.9 3.0  3.6
+60    40     55    70    35     50    85    45  20    90   75    32   60    50  80   35
+Line 8
+Hung  Nhung  Kiet  Linh  Huong  Long  Minh  Ha  Khoa  Bao  Nhat  Son  Phuc  Vy  Lan  Trang
+3.5   2.9    3.8   3.2   0.0    4.2   3.7   0.0 2.5   3.4  3.6   2.8  -0.5  3.9 3.0  3.6
+60    40     55    70    35     50    85    45  20    90   75    32   60    50  80   35
+Line 12
+Hung  Nhung  Kiet  Linh  Huong  Long  Minh  Ha  Khoa  Bao  Nhat  Son  Phuc  Vy  Lan  Trang
+3.5   2.9    3.8   3.2   0.0    4.2   3.7   0.0 2.5   3.4  3.6   2.8  -0.5  3.9 3.0  3.6
+60    40     55    70    35     50    85    45  20    90   75    32   60    50  80   35
+END

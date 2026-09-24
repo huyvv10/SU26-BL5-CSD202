@@ -1,0 +1,17 @@
+Line 0
+Bach  Thang  Chau  Dung  Hanh  Khanh  Khoi  Lan  Linh  Minh  Son  Ngoc  Phuc  Tuan  Quang  Vy
+3.5   3.7    2.9   3.9   3.1   -0.5   3.0   3.2  2.8   3.9   4.2  3.4   3.6   3.8   0.0    3.7
+40    75     65    50    70    50     30    25   45    60    90   35    80    85    32     90
+Line 4
+Bach  Thang  Chau  Dung  Hanh  Khanh  Khoi  Lan  Linh  Minh  Son  Ngoc  Phuc  Tuan  Quang  Vy
+3.5   3.7    2.9   3.9   3.1   -0.5   3.0   3.2  2.8   3.9   4.2  3.4   3.6   3.8   0.0    3.7
+40    75     65    50    70    50     30    25   45    60    90   35    80    85    32     90
+Line 8
+Bach  Thang  Chau  Dung  Hanh  Khanh  Khoi  Lan  Linh  Minh  Son  Ngoc  Phuc  Tuan  Quang  Vy
+3.5   3.7    2.9   3.9   3.1   -0.5   3.0   3.2  2.8   3.9   4.2  3.4   3.6   3.8   0.0    3.7
+40    75     65    50    70    50     30    25   45    60    90   35    80    85    32     90
+Line 12
+Bach  Thang  Chau  Dung  Hanh  Khanh  Khoi  Lan  Linh  Minh  Son  Ngoc  Phuc  Tuan  Quang  Vy
+3.5   3.7    2.9   3.9   3.1   -0.5   3.0   3.2  2.8   3.9   4.2  3.4   3.6   3.8   0.0    3.7
+40    75     65    50    70    50     30    25   45    60    90   35    80    85    32     90
+END

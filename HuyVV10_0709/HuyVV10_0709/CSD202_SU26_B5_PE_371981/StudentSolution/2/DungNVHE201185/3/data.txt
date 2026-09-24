@@ -1,0 +1,17 @@
+line 0 - The next line is line 1 (f1) tc2
+50	30	70	20	40	60	80	10	30	50	99	88	77	66	15	65	85  35  32  37
+Pen	Book	Desk	Lamp	Card	Chair	Clock	Fan	Notebook	DeskPad	A	B	ValidOne	ValidTwo	Cup	Ring	Vase Watch	Screen	Camera
+4.0	4.5	3.5	4.8	4.2	3.9	4.9	4.1	4.6	5.0	4.0	3.0	0.8	5.2	4.0	4.5	4.7  2.7 3.8 4.9
+line 4 - The next line is line 5 (f2)
+50	30	70	20	40	60	80	10	30	50	99	88	77	66	15	65	85
+Pen	Book	Desk	Lamp	Card	Chair	Clock	Fan	Notebook	DeskPad	A	B	ValidOne	ValidTwo	Cup	Ring	Vase Watch	Screen	Camera
+4.0	4.5	3.5	4.8	4.2	3.9	4.9	4.1	4.6	5.0	4.0	3.0	0.8	5.2	4.0	4.5	4.7  2.7 3.8 4.9
+line 8 - The next line is line 9 (f3)
+50	30	70	20	40	60	80	10	30	50	99	88	77	66	15	65	85
+Pen	Book	Desk	Lamp	Card	Chair	Clock	Fan	Notebook	DeskPad	A	B	ValidOne	ValidTwo	Cup	Ring	Vase Watch	Screen	Camera
+4.0	4.5	3.5	4.8	4.2	3.9	4.9	4.1	4.6	5.0	4.0	3.0	0.8	5.2	4.0	4.5	4.7  2.7 3.8 4.9
+line 12 - The next line is line 13 (f4)
+50	30	70	20	40	60	80	10	30	50	99	88	77	66	15	65	85
+Pen	Book	Desk	Lamp	Card	Chair	Clock	Fan	Notebook	DeskPad	A	B	ValidOne	ValidTwo	Cup	Ring	Vase Watch	Screen	Camera
+4.0	4.5	3.5	4.8	4.2	3.9	4.9	4.1	4.6	5.0	4.0	3.0	0.8	5.2	4.0	4.5	4.7  2.7 3.8 4.9
+END OF DATA
